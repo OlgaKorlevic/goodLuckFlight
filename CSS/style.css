@@ -173,8 +173,8 @@ input{
 input[type="email"], input[type="text"]{
      width: 20em;
  }
- input[type="age"], input[id="age"]{
-    width: 35px;
+ input[type="age"], input[id="age"], input[id="age2"], input[id="age3"]{
+    width: 50px;
 }
 input[type="pName"], input[id="pName"],input[type="lName"], input[id="lName"]{
     margin-bottom: 0.5em;
@@ -183,7 +183,7 @@ input[type="email"], input[id="email"],input[type="address"], input[id="address"
     margin-bottom: 0.5em;
 }
 input[id="postcode"]{
-    width: 45px;
+    width: 60px;
 }
 input[id="mobile"]{
     width: 85px;
