@@ -10,21 +10,17 @@
               //  + " radio button checked";
         selectedTrip=document.getElementById('oneWay').value;
         document.getElementById("disp").innerHTML = "";
-        //return selectedTrip;
-        return true;
+        return selectedTrip;
         }
         else if(document.getElementById('return').checked) {
         selectedTrip=document.getElementById('return').value;
         document.getElementById("disp").innerHTML = ""
-        //return selectedTrip;
-        return true;
-                    }
+        return selectedTrip;
+            }
         else {
         document.getElementById("disp").innerHTML = "Trip type is not selected";
-        //return selectedTrip;
-        return false;
-        
-                }
+        return selectedTrip;
+              }
     }
 
 
@@ -56,29 +52,23 @@ function flightDates (){
     let returnDate = document.getElementById('ret').value;
     let tripSelected=tripType();
     if (tripSelected==='') {
-    document.getElementById("disp2").innerHTML = "Did you choose the trip type?";
-    return false;}
+    document.getElementById("disp2").innerHTML = "Did you choose the trip type?";}
     else{
    if (departureDate===''){
     document.getElementById("disp2").innerHTML = "Select the date(s)";
-    return false;
     }  else if (tripSelected==='return' && returnDate===''){
     document.getElementById("disp2").innerHTML = "Select the date(s)";
-    return false;
 } else if (tripSelected==='oneWay'){
     document.getElementById("disp2").innerHTML = "";
-    //returnDate="not applicable";
-    //return departureDate;
-    //return returnDate;
-    return true;
+    returnDate="not applicable";
+    return departureDate;
+    return returnDate;
 }
 else {
     document.getElementById("disp2").innerHTML = "";
     //document.getElementById("disp2").innerHTML= 'departure'+departureDate+'return'+returnDate;//
     //Code to check which dates the function returns if it works
-   //return departureDate, returnDate;
-    return true;
-  };
+    return departureDate, returnDate};
 };
 }; 
 
@@ -90,13 +80,12 @@ function mealChoice (){
     const mealChosen=document.getElementById('meal').value 
         if (mealChosen == "nochoice") {
         document.getElementById("disp3").innerHTML = "Please select the meal option";
-        return false;
+        return false;//Check if I can use that in previous functions
         }else{
         //Code in green was to check whih meal value will be returned returned
         //document.getElementById("disp3").innerHTML = "Chosen meal"+mealChosen;
         document.getElementById("disp3").innerHTML = "";
-        //return mealChosen;
-        return true;
+        return mealChosen;
 }
 }
 
@@ -107,13 +96,12 @@ function payment (){
     const paymentOption=document.getElementById('payment').value 
         if (paymentOption == "nochoice") {
         document.getElementById("disp4").innerHTML = "Please select the payment option";
-        return false;
+        return false;//Check if I can use that in previous functions
         }else{
         //Code in green was to check whih meal value will be returned returned
         //document.getElementById("disp4").innerHTML = "Payment option"+paymentOption;
         document.getElementById("disp4").innerHTML = "";
-        //return paymentOption;
-        return true;
+        return paymentOption;
 }
 }
 
@@ -142,80 +130,46 @@ form.addEventListener ('submit', (e) => {
   destination();
   address();
   postcode();
-  //successMessage();
   const country = document.getElementById("country").value;
   //const error = document.getElementById("error");
   //var messages = [];
   //const errorElement = document.getElementById('error');
   //     errorElement.innerText = messages;
   //     }​*/
-  });
-/*
-  const el=function successMessage(){
-  const elements = [
-    firstName(),//0
-    firstName2(),//1
-    firstName3(),//2
-    lastName(),//3
-    lastName2(),//4
-    lastName3(),//5
-    age(),//6
-    age2(),//7
-    age3(),//8
-    genderCheck(),//9
-    genderCheck2(),//10
-    genderCheck3(),//11
-    tripType(),//12
-    flightDates(),//13
-    mealChoice(),//14
-    payment(),//15
-    email(),//16
-    phone(),//17
-    destination(),//18
-    address(),//19
-    postcode()//20
-  ]
-  //const el = elements.every(el);
-  if (elements.every(el))
-  {
-    console.log(elements.every(el));
-    document.getElementById("success").innerHTML = "Congratulations your booking is done!";
-  }
-  //console.log(elements);
-  // expected output: true*/
- 
- /* elements.every(function (e) {
-    if (e===false){
-    document.getElementById("success").innerHTML = "";
-         }
-     else{
-    document.getElementById("success").innerHTML = "Congratulations your booking is done!";
-         }
-     console.log(elements);
-});*/
-  //};
+  
 
+  });
+  /*
+  const functions = {
+    firstName: firstName(),
+    firstName2: firstName2(),
+    firstName3: firstName3(),
+    lastName: lastName(),
+    lastName2: lastName2(),
+    lastName3: lastName3(),
+    age: age(),
+    age2: age2(),
+    age3: age3(),
+    gender: genderCheck(),
+    gender2: genderCheck2(),
+    gender3: genderCheck3(),
+    tripType: tripType(),
+    fightDates: flightDates(),
+    mealChoice: mealChoice(),
+    payment: payment(),
+    email: email(),
+    phone: phone(),
+    destination: destination(),
+    address: address(),
+    postcode: postcode()
+  }
 
   //Check how this function works
-
-/*
-function successMessage( {
-elements.every(element);
-  if (element===true){
-    document.getElementById("success").innerHTML = "Congratulations your booking is done!";    
-  }else{
-    document.getElementById("finalerror").innerHTML = "You need to fill all the fields correctly";          
+let sucessMessage=functions.every(function){
+  if (function==true){
+document.getElementById("success").innerHTML = "Congratulations your booking is done and you will soon receive your booking details in your specified email!";
   }
-}*/
-
-/*
-let successMessage = elements.every(function (e) {
-    return e = true;
-    document.getElementById("success").innerHTML = "Congratulations your booking is done!";
-  });
 */
-
-
 
   const re = /^[\w ]+$/;
   function whiteSpace (value){
@@ -229,28 +183,23 @@ let successMessage = elements.every(function (e) {
    // let whiteSpace=whiteSpace(firstName);
     if (firstName===''){
       document.getElementById("fName-error").innerHTML = "Please write the first name";  
-      return false;
     }
     else if(!isNaN(firstName[0]) || firstName[0] === " ")
     {
     document.getElementById("fName-error").innerHTML = "First name cannot start with a number or space";
-    return false;
         }
     else if (!re.test(firstName)) {
     document.getElementById("fName-error").innerHTML = "First name contains invalid characters";
-    return false;
     }
     else if(whiteSpace(firstName)==true){
-      document.getElementById("fName-error").innerHTML = "First name contains white spaces";
-      return false;}
+      document.getElementById("fName-error").innerHTML = "First name contains white spaces";}
+
     else if (firstName.length > 20){
         document.getElementById("fName-error").innerHTML = "First Name is more than 20 characters";
-        return false;
                     }
              else {
       document.getElementById("fName-error").innerHTML = ""; 
-      //return firstName;
-      return true;
+      return firstName;
           }     }
  
 
@@ -259,60 +208,47 @@ let successMessage = elements.every(function (e) {
 function firstName2 (){
     let firstName2= document.getElementById('p2Name').value;
     if (firstName2===''){
-      document.getElementById("f2Name-error").innerHTML = "Please write the first name"; 
-      return false; 
+      document.getElementById("f2Name-error").innerHTML = "Please write the first name";  
           }
     else if(!isNaN(firstName2[0]) || firstName2[0] === " ")
           {
     document.getElementById("f2Name-error").innerHTML = "First name cannot start with a number or space";
-    return false;
               }
     else if (!re.test(firstName2)) {
     document.getElementById("f2Name-error").innerHTML = "First name contains invalid characters";
-    return false;
           }
           else if(whiteSpace(firstName2)==true){
-            document.getElementById("f2Name-error").innerHTML = "First name contains white spaces";
-            return false;
-          }
+            document.getElementById("f2Name-error").innerHTML = "First name contains white spaces";}
       
           else if (firstName2.length > 20){
               document.getElementById("f2Name-error").innerHTML = "First Name is more than 20 characters";
-              return false;
                           }
                    else {
             document.getElementById("f2Name-error").innerHTML = ""; 
-            //return firstName2;
-            return true;
+            return firstName2;
                 }     }
   
               function firstName3 (){
                 let firstName3= document.getElementById('p3Name').value;
                 if (firstName3===''){
                   document.getElementById("f3Name-error").innerHTML = "Please write the first name";  
-                  return false;
                       }
                 else if(!isNaN(firstName3[0]) || firstName3[0] === " ")
                       {
                 document.getElementById("f3Name-error").innerHTML = "First name cannot start with a number or space";
-                return false;
                           }
                 else if (!re.test(firstName3)) {
                 document.getElementById("f3Name-error").innerHTML = "First name contains invalid characters";
-                return false;
                       }
                       else if(whiteSpace(firstName3)==true){
-                        document.getElementById("f3Name-error").innerHTML = "First name contains white spaces";
-                        return false;}
+                        document.getElementById("f3Name-error").innerHTML = "First name contains white spaces";}
                   
                       else if (firstName3.length > 20){
                           document.getElementById("f3Name-error").innerHTML = "First Name is more than 20 characters";
-                          return false;
                                       }
                                else {
                         document.getElementById("f3Name-error").innerHTML = ""; 
-                        //return firstName3;
-                        return true;
+                        return firstName3;
                             }     }
 
   //New validation function for Last name
@@ -320,91 +256,70 @@ function firstName2 (){
                 let lastName= document.getElementById('lName').value;
                 if (lastName===''){
                   document.getElementById("lName-error").innerHTML = "Please write the last name";  
-                  return false;
                       }
                 else if(!isNaN(lastName[0]) || lastName[0] === " ")
                       {
                 document.getElementById("lName-error").innerHTML = "Last name cannot start with a number or space";
-                return false;
                           }
                 else if (!re.test(lastName)) {
                 document.getElementById("lName-error").innerHTML = "Last name contains invalid characters";
-                return false;
                       }
                       else if(whiteSpace(lastName)==true){
-                        document.getElementById("lName-error").innerHTML = "Last name contains white spaces";
-                        return false;}
+                        document.getElementById("lName-error").innerHTML = "Last name contains white spaces";}
                   
                       else if (lastName.length > 20){
                           document.getElementById("lName-error").innerHTML = "Last Name is more than 20 characters";
-                          return false;
                                       }
                                else {
                         document.getElementById("lName-error").innerHTML = ""; 
-                       // return lastName;
-                        return true;
+                        return lastName;
                             }     }
-
-
-
 
                           function lastName2 (){
                             let lastName2= document.getElementById('l2Name').value;
                             if (lastName2===''){
                               document.getElementById("l2Name-error").innerHTML = "Please write the last name";  
-                              return false;
                                   }
                             else if(!isNaN(lastName2[0]) || lastName2[0] === " ")
                                   {
                             document.getElementById("l2Name-error").innerHTML = "Last name cannot start with a number or space";
-                            return false;
                                       }
                             else if (!re.test(lastName2)) {
                             document.getElementById("l2Name-error").innerHTML = "Last name contains invalid characters";
-                            return false;
                                   }
                                   else if(whiteSpace(lastName2)==true){
-                                    document.getElementById("l2Name-error").innerHTML = "Last name contains white spaces";
-                                    return false;}
+                                    document.getElementById("l2Name-error").innerHTML = "Last name contains white spaces";}
                               
                                   else if (lastName2.length > 20){
                                       document.getElementById("l2Name-error").innerHTML = "Last Name is more than 20 characters";
-                                      return false;
                                                   }
                                            else {
                                     document.getElementById("l2Name-error").innerHTML = ""; 
-                                   // return lastName2;
-                                    return true;
+                                    return lastName2;
                                         }     }
   
   
                                       function lastName3 (){
                                         let lastName3= document.getElementById('l3Name').value;
                                         if (lastName3===''){
-                                          document.getElementById("l3Name-error").innerHTML = "Please write the last name"; 
-                                          return false; 
+                                          document.getElementById("l3Name-error").innerHTML = "Please write the last name";  
                                               }
                                         else if(!isNaN(lastName3[0]) || lastName3[0] === " ")
                                               {
                                         document.getElementById("l3Name-error").innerHTML = "Last name cannot start with a number or space";
-                                        return false;
                                                   }
                                         else if (!re.test(lastName3)) {
                                         document.getElementById("l3Name-error").innerHTML = "Last name contains invalid characters";
-                                        return false;
                                               }
                                               else if(whiteSpace(lastName3)==true){
-                                                document.getElementById("l3Name-error").innerHTML = "Last name contains white spaces";
-                                                return false;}
+                                                document.getElementById("l3Name-error").innerHTML = "Last name contains white spaces";}
                                           
                                               else if (lastName3.length > 20){
                                                   document.getElementById("l3Name-error").innerHTML = "Last Name is more than 20 characters";
-                                                  return false;
                                                               }
                                                        else {
                                                 document.getElementById("l3Name-error").innerHTML = ""; 
-                                                //return lastName3;
-                                                return true;
+                                                return lastName3;
                                                     }     }
 
   //New validation function for Age
@@ -418,21 +333,17 @@ function firstName2 (){
     //  }
    // }
   if (age===''){
-      document.getElementById("age-error").innerHTML = "Please fill in the age"; 
-      return false; 
+      document.getElementById("age-error").innerHTML = "Please fill in the age";  
       }
   else if (!age.match(/^\d+/)) {
     document.getElementById("age-error").innerHTML = "Invalid format for the age";
-    return false;
         }  
   else if (age < 18)
   {
 document.getElementById("age-error").innerHTML = "Adult passenger should be more than or equal to 18 years of age";
-return false;
   }else {
 document.getElementById("age-error").innerHTML = "";
-//return age;
-return true;
+return age;
 }
 }
 
@@ -446,21 +357,17 @@ return true;
   //      }
   //    }
     if (age2===''){
-        document.getElementById("age2-error").innerHTML = "Please fill in the age";
-        return false;  
+        document.getElementById("age2-error").innerHTML = "Please fill in the age";  
         }
         else if (!age2.match(/^\d+/)) {
           document.getElementById("age2-error").innerHTML = "Invalid format for the age";
-          return false;
               }  
     else if (age2 < 18)
        {
     document.getElementById("age2-error").innerHTML = "Adult passenger should be more than or equal to 18 years of age";
-    return false;
        }else {
     document.getElementById("age2-error").innerHTML = "";
-    //return age2;
-    return true;
+    return age2;
     }
     }
 
@@ -475,19 +382,15 @@ return true;
     //    }
       if (age3===''){
           document.getElementById("age3-error").innerHTML = "Please fill in the age";  
-          return false;
           }
           else if (!age3.match(/^\d+/)) {
             document.getElementById("age3-error").innerHTML = "Invalid format for the age";
-            return false;
                 }  
       else if(age3>=18) {
         document.getElementById("age3-error").innerHTML = "The passenger can't be older 18 or older"; 
-        return false;
         }else{
               document.getElementById("age3-error").innerHTML = "";
-        //return age3;
-        return true;
+        return age3;
       }
       };
   
@@ -510,19 +413,16 @@ let gender='';
 if(document.getElementById('male').checked) {
 gender=document.getElementById('male').value;
 document.getElementById("gender-error").innerHTML = "";
-//return gender;
-return true;
+return gender;
 }
 else if(document.getElementById('female').checked) {
 gender=document.getElementById('female').value;
 document.getElementById("gender-error").innerHTML = ""
-//return gender;
-return true;
+return gender;
     }
 else {
 document.getElementById("gender-error").innerHTML = "Gender is not selected";
-//return gender;
-return false;
+return gender;
       }
 }
 
@@ -531,20 +431,17 @@ function genderCheck2(){
   if(document.getElementById('male2').checked) {
   gender2=document.getElementById('male2').value;
   document.getElementById("gender-error2").innerHTML = "";
-  //return gender2;
-  return true;
+  return gender2;
   }
   else if(document.getElementById('female2').checked) {
   gender2=document.getElementById('female2').value;
   document.getElementById("gender-error2").innerHTML = ""
-  //return gender2;
-  return true;
+  return gender2;
       }
   else {
   document.getElementById("gender-error2").innerHTML = "Gender is not selected";
-  //return gender2;
-  return false;
-         }
+  return gender2;
+        }
   }
 
   function genderCheck3(){  
@@ -552,20 +449,17 @@ function genderCheck2(){
     if(document.getElementById('male3').checked) {
     gender3=document.getElementById('male3').value;
     document.getElementById("gender-error3").innerHTML = "";
-    //return gender3;
-    return true;
+    return gender3;
     }
     else if(document.getElementById('female3').checked) {
     gender3=document.getElementById('female3').value;
     document.getElementById("gender-error3").innerHTML = ""
-    //return gender3;
-    return true;
+    return gender3;
         }
     else {
     document.getElementById("gender-error3").innerHTML = "Gender is not selected";
-    //return gender3;
-    return false;
-            }
+    return gender3;
+          }
     }
 
 
@@ -575,16 +469,13 @@ function email(){
   let email = document.getElementById('email').value;
   if (email===''){
     document.getElementById("error1").innerHTML = "Please write the email";  
-    return false;
     }
   else if (!regex.test(email)) {
     document.getElementById("error1").innerHTML = "Please enter a valid email";
-    return false;
    }
    else{
     document.getElementById("error1").innerHTML = ""; 
-    //return email;
-    return true;
+    return email;
    }
 } 
 //Validation for phone number
@@ -592,17 +483,14 @@ const re1 = /^\d{10}$/;
 function phone(){
 let phone = document.getElementById('mobile').value;
 if (phone===''){
-  document.getElementById("error2").innerHTML = "Please enter your phone number"; 
-  return false; 
+  document.getElementById("error2").innerHTML = "Please enter your phone number";  
   }
 else if (!re1.test(phone) && isNaN) {
     document.getElementById("error2").innerHTML = "Please enter a valid phone number";
-    return false;
   }
   else {
     document.getElementById("error2").innerHTML = ""; 
-    //return phone;
-    return true;
+    return phone;
   }
 }
 
@@ -612,13 +500,11 @@ let destination=document.getElementById('orig').value;
 let origin=document.getElementById('destin').value;
 if (destination === origin) {
 document.getElementById("error3").innerHTML = "Destination cannot be same as origin";
-return false;
   }
   else {
     document.getElementById("error3").innerHTML = ""; 
-    //return destination;
-    //return origin;
-    return true;
+    return destination;
+    return origin;
   }
 }
 
@@ -626,13 +512,11 @@ return false;
 function address(){
 const pasAd = document.getElementById('address').value;
 if (pasAd===''){
-  document.getElementById("error4").innerHTML = "Please enter your address"; 
-  return false; 
+  document.getElementById("error4").innerHTML = "Please enter your address";  
   }
 else {
     document.getElementById("error4").innerHTML = ""; 
-    //return pasAd;
-    return true;
+    return pasAd;
   }
 }
 
@@ -641,26 +525,13 @@ const pin = /^\d{4}$/;
 function postcode(){
   let postcode = document.getElementById('postcode').value;
 if (postcode===''){
-    document.getElementById("error5").innerHTML = "Please enter your postcode";
-    return false;  
+    document.getElementById("error5").innerHTML = "Please enter your postcode";  
     }
 else if (!pin.test(postcode) && isNaN) {
       document.getElementById("error5").innerHTML = "Please enter a valid postcode";
-      return false;
     }
 else {
       document.getElementById("error5").innerHTML = ""; 
-      //return postcode;
-      return true;
+      return postcode;
     }
-}
-
-  
-
-
-
-
-
-
-  
-  
+  }
