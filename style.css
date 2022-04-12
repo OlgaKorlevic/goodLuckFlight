@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+
+    }
+    body {
+        background-image: url(../Images/pexels-c-cagnin-2007401.jpg);
+          background-size:cover;
+        
+        --nav-height: 70px;
+        padding-top: var(--nav-height);
+      
+      }
+    .btn{
+       margin-top: 1rem;
+       display:inline-block;
+        padding: 1rem 3rem;
+        font-size: 1.8rem;
+        border-radius: 5rem;
+        cursor: pointer;
+        background: none;
+        color:black;
+    
+    }
+    :hover .btn{
+        background:black;
+        color:white;
+    }
+    
+    .header{
+        position:fixed;
+        top:0; left:0; right:0;
+        z-index: 1000;
+        background:rgb(10, 19, 151);
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        padding:1.5rem 9%;
+
+    }
+    
+    .side-bar1{
+        float:left;
+        width:50%;
+        margin-top: 3rem;
+    
+    }
+    .side-bar2{
+        float: right;
+        width:50%;
+        margin-top: 3rem;
+        
+        
+    }
+    
+    .navbar a{
+        font-size: 1.7rem;
+        display:inline-block;
+        color:black;
+        margin:0 1rem;
+        text-decoration: solid;
+        padding:0 1rem;
+    
+    }
+    :hover i{
+        color:black;
+    }
+    :hover a{
+        color:wheat;
+    }
+
+.logo{
+   font-size: 2.5rem;
+   color:black;
+   font-weight: bolder;
+   text-transform: capitalize;
+}
+    i{
+        color:aqua;
+        padding-right: .5rem;
+    }
+    .wrap, .slide-content{
+        margin:0;
+        padding:0;
+        font-family:Arial, Helvetica, sans-serif;
+        width:100%;
+        height:100vh;
+        overflow-x:hidden;
+    }
+.wrap{
+    position: relative;
+
+}
+.slide{
+   background-size: cover; 
+   background-position: center;
+   background-repeat: no-repeat;
+   
+}
+.slide1{
+    background-image: url(../Images/pexels-adi-perets-4125993.jpg);
+}
+.slide2{
+    background-image: url(../Images/pexels-te-lensfix-1371360.jpg);
+}
+.slide3{
+    background-image: url(../Images/pexels-pixabay-413960.jpg);
+}
+.slide-content{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.arrow{
+    cursor: pointer;
+    position:absolute;
+    top: 50%;
+    margin-top: -35px;
+    width:0;
+    height:0;
+    border-style: solid;
+}
+#arrow-left{
+    border-width: 30px 40px 30px 0;
+    border-color: transparent rgb(129, 226, 226) transparent transparent;
+    left:0;
+    margin-left: 30px;
+}
+#arrow-right{
+    border-width: 30px 0 30px 40px;
+    border-color: transparent transparent transparent rgb(129, 226, 226);
+    right:0;
+    margin-right: 30px;
+}
+
+
+
+fieldset{
+    margin: 7em 0;
+    
+    padding: 2em 2em;
+    border: solid 1px rgb(7, 7, 7);
+    border-radius: 8px;
+   text-align: center;
+   background-color: rgba(72, 89, 90, 0.541);
+
+}
+legend{
+    font-size: 35px;
+    padding: 0 .25em;
+    color:rgb(12, 12, 54);
+}
+
+/* input and text area */
+
+input{
+    border: solid 1px rgb(146, 64, 64);
+}
+input[type="email"], input[type="text"]{
+     width: 20em;
+ }
+ input[type="age"], input[id="age"]{
+    width: 35px;
+}
+input[type="pName"], input[id="pName"],input[type="lName"], input[id="lName"]{
+    margin-bottom: 0.5em;
+}
+input[type="email"], input[id="email"],input[type="address"], input[id="address"]{
+    margin-bottom: 0.5em;
+}
+input[id="postcode"]{
+    width: 45px;
+}
+input[id="mobile"]{
+    width: 85px;
+}
+input[id="foodtype"]{
+    width: 70px;
+}
+input[id="country"]{
+    width: 30em;
+}
+
+
+
+ 
+/* submit button */
+
+input[type="submit"]{
+    padding: .5em 1em;
+    border-radius:6px;
+    background-color:black;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    max-width: 100px;
+    width:50%;
+    margin-top: 5px;
+    border-radius: 10px;
+   
+}
+
+#labeloneway{
+    margin-left:0;
+}
+#ticketForm{
+    box-sizing: border-box;
+    background-color:#F2E9E7 ;
+    border-radius: 2px;
+    border: 2px solid #85867a;
+    box-shadow: 5px 10px #bebfb7 ;
+    padding: 20px;
+    
+   }
+#destination {
+    white-space: nowrap;
+    
+}
+ #flyfrom, #flyto{
+     display: inline;
+ }
+ .gender{
+    margin-left:40px;
+ }
+#gm,#agelabel{
+    margin-left:40px;
+}
+h3{
+    text-decoration: solid;
+    font-size:large;
+}
+h4{
+    text-decoration: solid;
+    font-size:large;
+}
+#foodchoice{
+    font-size: 15px;
+}
+label {
+    color:black;
+    
+    font-size: 1.8em;
+    
+}
+.form-group{
+    margin-top: 1em;
+}
+h5{
+    font-size: 1.8em;
+}
+
+#age , #age2 , #age3 {
+    width: 70px;
+}
+
+#paymentM , #flightspan{
+    font-size: 18px;
+}
+
+#submitBtn {
+    padding: 15px 15px;
+
+}
+
+#oneWay{
+    font-size: 18px;
+}
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  

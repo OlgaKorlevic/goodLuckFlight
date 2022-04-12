@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!---font awesome cdn link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">  
+  <!--css file link-->
+<link rel="stylesheet" href="style.css">
+  <!--custom js file link--->
+  <script src="../flightCenter/JS/script.js" defer></script>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Center</title>
+</head>
+<body>
+  <!---header section starts-->
+  
+ <header class="header">
+<a href="#" class="logo"><i class="fas fa-paper-plane"></i>Travel</a>
+<nav class="navbar">
+<a href="../flightCenter/index.html">Home</a>
+<a href="#">about</a>
+<a href="#">Destination</a>
+<a href="#">services</a>
+<a href="#">gallery</a>
+<a href="#">Contact Us</a>
+</nav>
+<a href="../flightCenter/login.html" class="btn">Book now</a>
+
+</header>
+
+<!---header section ends-->
+
+<!--Book now form-->
+<!--Radio buttons with One way or Return-->
+<div class="container">
+   <form class="form-group"  ID="form">
+    <!-- <!DOCTYPE html>
+    <html lang="en">
+    <head>
+       font awesome cdn link-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">  
+       css file link -->
+    <!-- <link rel="stylesheet" href="../flightCenter/CSS/style.css"> -->
+      <!--custom js file link--->
+      <!-- <script src="../flightCenter/JS/script.js" defer></script> -->
+      <!-- <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flight Center</title> -->
+    <!-- </head>
+    <body> -->
+      <!---header section starts-->
+      
+     <header class="header">
+    <a href="#" class="logo"><i class="fas fa-paper-plane"></i>Travel</a>
+    <nav class="navbar">
+    <a href="../flightCenter/index.html">Home</a>
+    <a href="#">about</a>
+    <a href="#">Destination</a>
+    <a href="#">services</a>
+    <a href="#">gallery</a>
+    <a href="#">Contact Us</a>
+    </nav>
+    <a href="../flightCenter/login.html" class="btn">Book now</a>
+    
+    </header>
+    
+    <!---header section ends-->
+    <!--Book now form-->
+       <section>
+<fieldset>
+    <legend>Booking Details</legend>
+    <form name="comment" action="#" method=post><!---form starts-->
+  <!-- <h3 id="flightype">Flight Type :</h3> -->
+  <span id="flightspan">Choose Flight Type:</span>
+<input type="radio" name="button" id="oneWay"
+value="oneWay" onclick="hideReturn(); flightDates()">One Way
+
+<input type="radio" name="button" id="return"
+value="return" onclick="hideReturn(); flightDates()">Return<br>
+</form>
+<br>
+<div id="disp" style="color:red; font-size:16px;"></div> <!-- Message that appears when nothing is selected-->
+<!--<br><button onclick= "tripType()" type="button">Check Trip Type</button>--><!--Delete here and assign to the final Submit button-->
+<p>
+<!--Code for departure and return dates-->
+    <form id="dates">
+        <label id="deplb">Departure<input type="date" name="departure" value="departure" id="dep"  /></label> 
+        <label id="retlb">Return<input type="date" name="return"  value="return" id="ret" /></label><br><br>
+      </form>
+      <div id="disp2" style="color:red; font-size:18px; font-weight:bold;"></div> <!-- Message that appears when nothing is selected-->
+<!--<br><button onclick= "flightDates()" type="button">Check Dates</button>--><!--Delete here and assign to the final Submit button-->
+</p>
+<span class="headfordestination">Destination :</span>
+
+        <label id="origin" for="origin" required>From:</label>
+        <select id="orig" required>
+<!--             <option value="noselection" default>please select your origin</option> -->
+            <option value="Sydney">Sydney</option>
+            <option value="Melbourne">Melbourne</option>
+            <option value="Geelong">Geelong</option>
+            <option value="Canberra">Canberra</option>
+            <option value="Adelaide">Adelaide</option>
+            <option value="Perth">Perth</option>
+            <option value="Hobart">Hobart</option>
+            <option value="Darwin">Darwin</option>
+            <option value="Brisbane">Brisbane</option>
+            <option value="Gold Coast">Gold Coast</option>
+            <option value="Launceston">Launceston</option>
+            <option value="Cairns">Cairns</option>
+        </select>
+        <label id="destination" for="destination">To:</label>
+        <select id="destin" required>
+<!-- <option value="noselection" default>please select your destination</option> -->
+            <option value="Sydney">Sydney</option>
+            <option value="Melbourne">Melbourne</option>
+            <option value="Geelong">Geelong</option>
+            <option value="Canberra">Canberra</option>
+            <option value="Adelaide">Adelaide</option>
+            <option value="Perth">Perth</option>
+            <option value="Hobart">Hobart</option>
+            <option value="Darwin">Darwin</option>
+            <option value="Brisbane">Brisbane</option>
+            <option value="Gold Coast">Gold Coast</option>
+            <option value="Launceston">Launceston</option>
+            <option value="Cairns">Cairns</option>
+
+        </select>
+        <div id="error3" style="color:red; font-size:18px; font-weight:bold;"></div>
+
+
+           <!-- <label for="flyfrom" id="flyfrom">From :</label><input type="text" id="flyfrom" name="flyfrom">
+           <small class="error"></small>
+           <label for="flyto" id="flyto">To :</label><input type="text" id="flyto" name="flyto">
+           <small class="error"></small> -->
+           <br><br>
+           <h3>Passenger Details:</h3><br><br>
+           
+           <h4>Passenger-1</h4>
+           <label for ="name">First Name</label> <input  type ="text" id="pName" name="pName"><br><br>
+          <div id="fName-error" style="color:red; font-size:18px; font-weight:bold;"></div>
+
+           <label for ="name">Last Name</label> <input  type ="text" id="lName" name="pName"><br><br>
+           <div id="lName-error" style="color:red; font-size:18px; font-weight:bold;"></div>
+           
+           <label for="gender">Gender</label>
+           <label for="Gender" id="gm"> Male</label><input  type="radio" id="male" name="gender" value="male">
+           <label for="Gender">Female</label><input  type="radio" id="female" name="gender" value="female">
+           <div id="gender-error" style="color:red; font-size:18px; font-weight:bold;"></div>
+
+           <label for="age" id="agelabel" >Age</label> <input  type ="text" id="age" name="age">
+          <div id="age-error" style="color:red; font-size:18px; font-weight:bold;"></div><br><br>
+
+
+           <h4>Passenger-2</h4><br>
+           <label for ="name">First Name</label> <input  type ="text" id="p2Name" name="p2Name" ><br><br>
+           <div id="f2Name-error" style="color:red; font-size:18px; font-weight:bold;"></div>
+
+           <label for ="name">Last Name</label> <input  type ="text" id="l2Name" name="p2Name"><br><br>
+           <div id="l2Name-error" style="color:red; font-size:18px; font-weight:bold;"></div>
+           
+
+           
+           <label for="gender2">Gender</label>
+           <label for="Gender2" id="gm2"> Male</label><input  type="radio" id="male2" name="gender2" value="male2">
+           <label for="Gender2">Female</label><input  type="radio" id="female2" name="gender2" value="female2">
+           <div id="gender-error2" style="color:red; font-size:18px; font-weight:bold;"></div>
+           
+           
+           <label for="age2" id="agelabel2" >Age</label> <input  type ="text" id="age2" name="age2" >
+           <div id="age2-error" style="color:red; font-size:18px; font-weight:bold;"></div>
+           <br><br>
+           
+           <h4>Passenger-3</h4><br>
+           <label for ="name">First Name</label> <input  type ="text" id="p3Name" name="p3Name" >
+           <div id="f3Name-error" style="color:red; font-size:18px; font-weight:bold;"></div>
+           <br><br>
+           <label for ="name">Last Name</label> <input  type ="text" id="l3Name" name="p3Name"><br><br>
+           <div id="l3Name-error" style="color:red; font-size:18px; font-weight:bold;"></div>
+
+
+           <label for="gender3">Gender</label>
+           <label for="Gender3" id="gm"> Male</label><input  type="radio" id="male3" name="gender3" value="male3">
+           <label for="Gender3">Female</label><input  type="radio" id="female3" name="gender3" value="female3">
+           <div id="gender-error3" style="color:red; font-size:18px; font-weight:bold;"></div>
+           
+           <label for="age3" id="agelabel3" >Age</label> <input  type ="text" id="age3" name="age3" ><br><br>
+           <div id="age3-error" style="color:red; font-size:18px; font-weight:bold;"></div>
+
+           <br><br>
+
+<!-- Drop down for food type (veg/non-veg)-->
+<p>
+    <h4>Food Options (We cater your preference of food type)</h4><br>
+<select id="meal" name="meal">
+<!--<label for="meal">Choose your meal:</label>   -->
+  <option value="nochoice">Meal options</option>
+  <option value="veg">Veg</option>
+  <option value="nonveg">Non-Veg</option>
+  <option value="lact">Lactose free</option>
+</select>
+<div id="disp3" style="color:red; font-size:18px; font-weight:bold;"></div>
+<!--<br><button onclick= "mealChoice()" type="button">Check Meal Choice</button>--><!--Delete here and assign to the final Submit button-->
+</p>
+</select> <br><br>
+<h4>Contact Details & Payment</h4><br>
+<label for ="email">E-mail</label> <input  type ="text" id="email" name="email" >
+<!-- <div id="error1" style="color:red; font-size:18px; font-weight:bold;"> -->
+ <div id="error1" style="color:red; font-size:18px; font-weight:bold;"></div>
+<br>
+<label for ="address">Address</label>
+<input type ="text" id="address" name="address" ><br><br>
+<div id="error4" style="color:red; font-size:18px; font-weight:bold;"></div>
+
+<label id="country" for="country">Country</label>
+   <select required id="nation" required>
+     <option value="australia">Australia</option>
+   </select>
+
+   
+<label for="postcode">Post Code:</label>
+<input id="postcode" type="text"/>
+<div id="error5" style="color:red; font-size:18px; font-weight:bold;"></div>
+
+<!--maxlength="4" pattern="^[0-9]{4}$" placeholder="1234"-->
+
+   <br><br>
+
+<label for="mobile">Mobile Number*: </label><input id="mobile" placeholder="0123456789" type="text"
+       maxlength="10" />
+   <div id="error2" style="color:red; font-size:18px; font-weight:bold;"></div>
+<br><br>
+
+
+
+
+<!-- Drop down for payment options-->
+<span id="paymentM">Select Payment Method: </span>
+<select id="payment" name="payment">
+    <!--<label for="payment">Choose your payment option (required):</label>-->   
+      <option value="nochoice" >payment option</option>
+      <option value="card" >bank card</option>
+      <option value="transfer" >bank transfer</option>
+      <option value="paypal" >PayPal</option>
+    </select>
+    <div id="disp4" style="color:red; font-size:18px; font-weight:bold;"></div>
+<!--<br><button onclick= "payment()" type="button">Check Payment Options</button>--><!--Delete here and assign to the final Submit button-->
+<br><br>
+<input type="submit" id="submitBtn"   value="SUBMIT FORM">
+
+</form><!---form ends-->
+ 
+</fieldset>
+
+
+
+</section>
+<script src="main.js"></script>
+
+    </body>
+</html>
